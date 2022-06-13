@@ -1,0 +1,8 @@
+# Pour être certain que le site n'existe en même temps avec et sans le wwww
+RewriteEngine on
+RewriteBase /
+RewriteCond %{http_host} ^http://agencelapanthère.fr [nc]
+RewriteRule ^(.*)$ http://www.agencelapanthère.fr/$1 [r=301,nc]
+
+# Redirection de l'ancienne URL vers la nouvelle
+RedirectPermanent / http://www.agencelapanthère.fr
